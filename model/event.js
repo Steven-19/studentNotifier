@@ -28,7 +28,13 @@ module.exports = class Event {
 
 
     static doesEventExist() {
-
+        const queryString = 'SELECT * FROM Events WHERE EventName="'+this.name+'"';
+        connection.query(queryString, function(err, rows) {
+            if (rows.length > 0) {
+                return true;
+            }
+            return false;
+        });
     }
 
     // Configuration
