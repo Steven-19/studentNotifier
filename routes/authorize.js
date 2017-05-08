@@ -20,3 +20,5 @@ router.get('/', function(req, res) {
     redirectURISuccess: redirectURISuccess
   });
 });
+
+module.exports = router;
