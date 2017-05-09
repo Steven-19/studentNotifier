@@ -7,6 +7,8 @@ const
   request = require('request');
   schedule = require('node-schedule');
 
+const verification = require('../facebook/verification');
+
 // routers
 const 
   index = require('./routes/index');
@@ -20,7 +22,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ verify: verification.verifyRequestSignature }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
