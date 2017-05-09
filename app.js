@@ -7,7 +7,7 @@ const
   request = require('request');
   schedule = require('node-schedule');
 
-const verification = require('../facebook/verification');
+const verification = require('./facebook/verification');
 
 // routers
 const 
