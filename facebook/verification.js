@@ -1,3 +1,4 @@
+var crypto = require('crypto');
 module.exports.verifyRequestSignature = function(req, res, buf) {
   var signature = req.headers["x-hub-signature"];
 
